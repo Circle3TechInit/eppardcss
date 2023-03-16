@@ -1,0 +1,234 @@
+//* Generate css typograghy styling classes
+$fonts: (
+    "serif": $serif,
+    "sans": $sansserif,
+    "monos": $monos,
+    "cursive": $cursive,
+    "fantasy": $fantasy,
+);
+
+$fonts-style: (
+    "norm": normal,
+    "ital": italic,
+    "obliq": oblique
+);
+
+$font-weight: (
+    "norm": normal,
+    "bold": bold,
+    "bolder": bolder,
+    "lighter": lighter,
+    "4": 400,
+    "5": 500,
+    "6": 600,
+    "7": 700,
+    "8": 800,
+    "9": 900,
+);
+
+$header-font-sizes: (
+  "sm": 3em,
+  "md": 3.5em,
+  "lg": 4em,
+  "xl": 4.5em,
+  "xxl": 5em,
+  "xxxl": 6.5em,
+);
+
+$text-font-sizes: (
+    "sm": $font-size-sm,
+    "md": $base-font-size,
+    "lg": $font-size-lg,
+    "xl": $font-size-xl,
+    "xxl": $font-size-xxl,
+    "xxxl": $font-size-xxxl
+);
+
+$text-align: (
+    "center": center,
+    "left": left,
+    "right": right,
+);
+
+$text-align-last: (
+    "center": center,
+    "left": left,
+    "right": right,
+);
+
+$text-decoration: (
+    "o": overline,
+    "l": line-through,
+    "u": underline,
+    "uo": underline overline,
+);
+
+$letter-spacing: (
+    "0": 0,
+    "1": .1em,
+    "2": .2em,
+    "3": .3em,
+    "4": .4em,
+    "5": .5em,
+    "6": .6em,
+    "7": .7em,
+    "8": .8em,
+    "9": .9em,
+    "10": 1em,
+    "11": 1.2em,
+    "12": 1.4em,
+    "13": 1.6em,
+    "14": 1.8em,
+    "15": 2em,
+    "16": 3em,
+);
+
+$text-transform: (
+    "u": uppercase,
+    "l": lowercase,
+    "c": capitalize,
+);
+
+$text-shadow: (
+    "xs": 0 .1em .2em rgba(0, 0, 0, 0.726),
+    "sm": 0 .2em .4em rgba(0, 0, 0, 0.726),
+    "md": 0 .4em .8em rgba(0, 0, 0, 0.726),
+    "lg": 0 .6em 1.2em rgba(0, 0, 0, 0.726),
+    "xl": 0 1em 2em rgba(0, 0, 0, 0.726),
+);
+
+$word-break: (
+    "normal": normal,
+    "ba": break-all,
+    "ka": keep-all,
+    "bk": break-word,
+    "ini": initial,
+    "inh": inherit,
+);
+
+$word-wrap: (
+    "normal": normal,
+    "bk": break-word,
+    "ini": initial,
+    "inh": inherit,
+);
+
+$writing-mode: (
+    "tb": horizontal-tb,
+    "rl": vertical-rl,
+    "lr": vertical-lr,
+);
+
+$user-select: (
+    "auto": auto,
+    "none": none,
+    "text": text,
+    "all": all,
+);
+
+$line-height: (
+    "0": 0, "1": .1em, "2": .2em, "3": .3em, "4": .4em, "5": .5em, "6": .6em, "7": .7em, "8": .8em, "9": .9em, "10": 1em,
+    "11": 1.1em, "12": 1.2em, "13": 1.3em, "14": 1.4em, "15": 1.5em, "16": 1.6em, "17": 1.7em, "18": 1.8em, "19": 1.9em, "20": 2.0em,
+    "21": 2.1em, "22": 2.2em, "23": 2.3em, "24": 2.4em, "25": 2.5em, "26": 2.6em, "27": 2.7em, "28": 2.8em, "29": 2.9em, "30": 3.0em,
+    "31": 3.1em, "32": 3.2em, "33": 3.3em, "34": 3.4em, "35": 3.5em, "36": 3.6em, "37": 3.7em, "38": 3.8em, "39": 3.9em, "40": 4.0em,
+    "41": 4.1em, "42": 4.2em, "43": 4.3em, "44": 4.4em, "45": 4.5em, "46": 4.6em, "47": 4.7em, "48": 4.8em, "49": 4.9em, "50": 5.0em,
+    "51": 5.1em, "52": 5.2em, "53": 5.3em, "54": 5.4em, "55": 5.5em, "56": 5.6em, "57": 5.7em, "58": 5.8em, "59": 5.9em, "60": 6.0em,
+);
+
+@each $key, $val in $fonts {
+    .fontf-#{$key} {
+        font-family: $val;
+    }
+}
+
+@each $key, $val in $fonts-style {
+    .fonts-#{$key} {
+        font-style: $val;
+    }
+}
+
+@each $key, $val in $font-weight {
+    .fontw-#{$key} {
+        font-weight: $val;
+    }
+}
+
+@each $key, $val in $header-font-sizes {
+    .header-font-#{$key} {
+        font-size: $val;
+    }
+}
+
+@each $key, $val in $text-font-sizes {
+    .font-#{$key} {
+        font-size: $val;
+    }
+}
+
+@each $key, $val in $text-align {
+    .text-#{$key} {
+        text-align: $val;
+    }
+}
+
+@each $key, $val in $text-align-last {
+    .textl-#{$key} {
+        text-align-last: $val;
+    }
+}
+
+@each $key, $val in $text-decoration {
+    .textd-#{$key} {
+        text-decoration: $val;
+    }
+}
+
+@each $key, $val in $text-transform {
+    .textt-#{$key} {
+        text-transform: $val;
+    }
+}
+
+@each $key, $val in $colors {
+    .texttc-#{$key} {
+        text-decoration-color: $val;
+    }
+}
+
+@each $key, $val in $word-break {
+    .wordb-#{$key} {
+        word-break: $val;
+    }
+}
+
+@each $key, $val in $word-wrap {
+    .wordw-#{$key} {
+        word-wrap: $val;
+    }
+}
+
+@each $key, $val in $writing-mode {
+    .write-mod-#{$key} {
+        writing-mode: $val;
+    }
+}
+
+@each $key, $val in $user-select {
+    .user-sel-#{$key} {
+        -webkit-user-select: $val;
+        -ms-user-select: $val;
+        user-select: $val;
+    }
+}
+
+@each $key, $val in $letter-spacing {
+    .letter-space-#{$key} {
+        letter-spacing: $val;
+    }
+}
+
+@each $key, $val in $line-height {
+    .line-height-#{$key} {
+        line-height: $val;
+    }
+}

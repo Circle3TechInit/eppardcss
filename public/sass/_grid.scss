@@ -1,0 +1,201 @@
+@use "sass:math";
+
+$grid-columns: 12;
+$grid-gaps:(
+    "0": 0, "1": .1em, "2": .2em, "3": .3em, "4": .4em, "5": .5em, "6": .6em, "7": .7em, "8": .8em, "9": .9em, "10": 1em,
+    "11": 1.1em, "12": 1.2em, "13": 1.3em, "14": 1.4em, "15": 1.5em, "16": 1.6em, "17": 1.7em, "18": 1.8em, "19": 1.9em, "20": 2.0em,
+    "21": 2.1em, "22": 2.2em, "23": 2.3em, "24": 2.4em, "25": 2.5em, "26": 2.6em, "27": 2.7em, "28": 2.8em, "29": 2.9em, "30": 3.0em,
+    "31": 3.1em, "32": 3.2em, "33": 3.3em, "34": 3.4em, "35": 3.5em, "36": 3.6em, "37": 3.7em, "38": 3.8em, "39": 3.9em, "40": 4.0em,
+    "41": 4.1em, "42": 4.2em, "43": 4.3em, "44": 4.4em, "45": 4.5em, "46": 4.6em, "47": 4.7em, "48": 4.8em, "49": 4.9em, "50": 5.0em,
+    "51": 5.1em, "52": 5.2em, "53": 5.3em, "54": 5.4em, "55": 5.5em, "56": 5.6em, "57": 5.7em, "58": 5.8em, "59": 5.9em, "60": 6.0em,
+);
+$layout-values: flex-start, flex-end, center, space-between, space-around, space-evenly, initial, inherit;
+$layout-values-jus-items: flex-start, flex-end, center, left, right, space-between, space-around, self-start, self-end;
+$layout-values-ali-items: stretch, center, flex-start, flex-end, baseline, initial, inherit;
+$layout-values-ali-cont: stretch, center, flex-start, flex-end,  space-between, space-around, space-evenly, initial, inherit;
+
+//* Base layout classes
+.container {
+    width: 100%;
+    height: max-content;
+    box-sizing: border-box;
+}
+
+//* Column Layouts
+.layoutG-column {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-auto-rows: max-content;
+    div {
+        width: 100%;
+    }
+}
+
+.layoutG-column1 {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: max-content;
+    div {
+        width: 100%;
+    }
+}
+
+.layoutG-column2 {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: max-content;
+    div {
+        width: 100%;
+    }
+}
+
+.layoutG-column3 {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: max-content;
+    div {
+        width: 100%;
+    }
+}
+
+.layoutG-column4 {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    grid-auto-rows: max-content;
+    div {
+        width: 100%;
+    }
+}
+
+.layoutG-column5 {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+    grid-auto-rows: max-content;
+    div {
+        width: 100%;
+    }
+}
+
+.layoutG-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+}
+
+//* Row Layout, Responsive layout Foundation
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+//* Grid-gaps
+@each $key, $val in $grid-gaps {
+    .gap-#{$key} {
+        gap: $val;
+    }
+    .gap-col-#{$key} {
+        column-gap: $val;
+    }
+    .gap-row-#{$key} {
+        row-gap: $val;
+    }
+}
+
+//* Align contents (Row Layout)
+// Justify content classes
+@each $val in $layout-values {
+    .justify-#{$val} {
+        justify-content: $val;
+    }
+}
+// Align content classes
+@each $val in $layout-values-ali-cont {
+    .align-cont-#{$val} {
+        align-content: $val;
+    }
+}
+
+//* Align contents (Grid Layout)
+//* Justify items classes
+@each $val in $layout-values-jus-items {
+    .justify-item-#{$val} {
+        justify-items: $val;
+    }
+}
+//* Align items classes
+@each $val in $layout-values-ali-items {
+    .align-item-#{$val} {
+        align-items: $val;
+    }
+}
+
+//* Column classes
+
+// Small cellphones
+@include xs {
+    @for $i from 1 through 12 {
+        .col-#{$i}-xs {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+// Smartphones
+@include sm {
+    @for $i from 1 through 12 {
+        .col-#{$i}-sm {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+// Tablets, laptops
+@include md {
+    @for $i from 1 through 12 {
+        .col-#{$i}-md {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+// Pc, small tv
+@include lg {
+    @for $i from 1 through 12 {
+        .col-#{$i}-lg {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+// Large display screens
+@include xl {
+    @for $i from 1 through 12 {
+        .col-#{$i}-xl {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}

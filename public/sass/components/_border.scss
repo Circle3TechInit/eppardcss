@@ -1,0 +1,84 @@
+//* Generate Border classes
+@mixin border($border-color: black, $border-width: .2em) {
+    border: $border-width solid $border-color;
+}
+
+@mixin bordert($border-color: black, $border-width: .2em) {
+    border-top: $border-width solid $border-color;
+}
+
+@mixin borderb($border-color: black, $border-width: .2em) {
+    border-bottom: $border-width solid $border-color;
+}
+
+@mixin borderl($border-color: black, $border-width: .2em) {
+    border-left: $border-width solid $border-color;
+}
+
+@mixin borderr($border-color: black, $border-width: .2em) {
+    border-right: $border-width solid $border-color;
+}
+
+@mixin outline($border-color: black, $border-width: .3em) {
+    outline: $border-width solid $border-color;
+}
+
+.border {
+    @include border;
+}
+
+.bordert {
+    @include bordert;
+}
+
+.borderb {
+    @include borderb;
+}
+
+.borderl {
+    @include borderl;
+}
+
+.borderr {
+    @include borderr;
+}
+
+.outline {
+    @include outline;
+}
+
+@each $key, $val in $colors {
+    .border-#{$key} {
+        @include border($val);
+    } 
+}
+
+@each $key, $val in $colors {
+    .bordert-#{$key} {
+        @include bordert($val);
+    } 
+}
+
+@each $key, $val in $colors {
+    .borderb-#{$key} {
+        @include borderb($val);
+    } 
+}
+
+@each $key, $val in $colors {
+    .borderl-#{$key} {
+        @include borderl($val);
+    } 
+}
+
+@each $key, $val in $colors {
+    .borderr-#{$key} {
+        @include borderr($val);
+    } 
+}
+
+@each $key, $val in $colors {
+    .outline-#{$key} {
+        @include outline($val);
+    } 
+}

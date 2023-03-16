@@ -1,0 +1,52 @@
+//* Generate Alert Classes
+@mixin alert($alertbg-color: #f44336) {
+    padding: .2em;
+    border: none;
+    border-radius: .2em;
+    background-color: inherit;
+    .alert-wrap {
+        padding: .2em;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: max-content;
+        row-gap: .4em;
+        justify-items: right;
+        background-color: $alertbg-color;
+    }
+    .alert-body {
+        padding: .4em;
+        width: 100%;
+    }
+    
+    /* The close button */
+    .closebtn {
+        //margin-left: 15px;
+        border: none;
+        border-radius: .2em;
+        width: max-content;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        // line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            color: gray;
+        }
+    }
+}
+
+.alert {
+    @include alert;
+    background-color: #f44336;
+}
+
+
+@each $key, $val in $colors {
+    .alert-#{$key} {
+        @include alert($val);
+        //background-color: $val;
+    }
+}

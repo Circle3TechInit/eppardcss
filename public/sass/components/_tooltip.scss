@@ -1,0 +1,56 @@
+//* Generate css tooltips classes
+@mixin tooltip($bgg-color: #555, $textColor: #000) {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted $bgg-color; /* If you want dots under the hoverable text */
+    /* Show the tooltip text when you mouse over the tooltip container */
+    &:hover {
+        .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: $bgg-color;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        /* Position the tooltip text */
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        /* Fade in tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $bgg-color transparent transparent transparent;
+    }
+    p {
+        color: $textColor;
+    }
+}
+
+.tooltip {
+    @include tooltip(#555, #000);
+}
+
+
+@each $key, $val in $colors {
+    .tooltip-#{$key} {
+        @include tooltip($val, $val);
+    }
+}

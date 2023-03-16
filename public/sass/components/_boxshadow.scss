@@ -1,0 +1,16 @@
+// Generate Box shadow Classes
+@mixin box_shadow($bgg-color: rgba(0, 0, 0, 0.719) ) {
+    box-shadow: inset 0 .1em .2em $bgg-color;
+}
+
+
+.bs {
+    @include box_shadow(#000);
+}
+
+
+@each $key, $val in $colors {
+    .bs-#{$key} {
+        @include box_shadow($val);
+    }
+}

@@ -1,0 +1,25 @@
+//* Generate css label classes
+@mixin label($label-color: white) {
+    color: $label-color;
+    padding: .5em;
+}
+
+
+@each $key, $val in $colors {
+    .label-#{$key} {
+        @include label;
+        background-color: $val;
+    }
+    .label-rdg-#{$key} {
+        @include label;
+        border: .2em ridge white;
+        border-radius: .2em;
+        background-color: $val;
+    }
+    .label-dbl-#{$key} {
+        @include label;
+        border: .2em double white;
+        border-radius: .2em;
+        background-color: $val;
+    }
+}

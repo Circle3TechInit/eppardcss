@@ -1,0 +1,33 @@
+//* Generate css position directions 
+
+// in percent measure unit
+@each $key, $val in $percentage {
+    .top-#{$key} {
+        top: $val;
+    }
+    .bottom-#{$key} {
+        bottom: $val;
+    }
+    .left-#{$key} {
+        left: $val;
+    }
+    .right-#{$key} {
+        right: $val;
+    }
+}
+
+// in em measure unit
+@each $key, $val in $number {
+    .top-em-#{$key} {
+        top: $val em;
+    }
+    .bottom-em-#{$key} {
+        bottom: $val em;
+    }
+    .left-em-#{$key} {
+        left: $val em;
+    }
+    .right-em-#{$key} {
+        right: $val em;
+    }
+}

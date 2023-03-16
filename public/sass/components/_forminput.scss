@@ -1,0 +1,164 @@
+//* Generate form input styling classes
+@mixin inputt($bg-color: #e2e2e2, $textAlign: center, $textcolor: gray) {
+    outline-style: none;
+    padding: .8em .4em;
+    color: $textcolor;
+    text-align: $textAlign;
+    text-align-last: $textAlign;
+    border-radius: $base-border-radius;
+    background-color: $bg-color;
+    width: 100%;
+    transition: 1s;
+}
+
+@mixin  inputfile($colour: $secondary, $bgcolor: white) {
+    padding: .8em .4em;
+    border-radius: .2em;
+    color: gray;
+    background-color: $bgcolor;
+    transition: 1s;
+    width: 100%;
+    + label {
+        display: none;
+    }
+}
+
+@mixin  inputfile1($bgcolor: black) {
+    .file-input {
+        text-align: center;
+        display: grid;
+        justify-items: center;
+        .file {
+            opacity: 0;
+            width: 0.1px;
+            height: 0.1px;
+            position: absolute;
+        }
+        label {
+            background-color: $bgcolor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .6em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform .2s ease-out;
+        }
+        input:hover + label,input:focus + label {
+            transform: scale(1.02);
+        }
+        
+        /* Adding an outline to the label on focus */
+        input:focus + label {
+            outline: 1px solid rgb(78, 76, 76);
+            outline: -webkit-focus-ring-color auto 1px;
+        }
+    }
+    
+}
+
+@mixin  inputfilehover($colour-bd: $secondary, $bgcolor: white) {
+    background-color: $bgcolor;
+    border: .2em solid $colour-bd;
+}
+
+
+
+.inputt {
+    @include inputt;
+}
+
+.inputf {
+    @include inputfile;
+}
+
+.inputf1 {
+    @include inputfile1;
+}
+
+.inputf-hover {
+    @include inputfilehover;
+}
+
+
+
+@each $key, $val in $colors {
+    .inputbdr-#{$key} {
+        @include inputt($val);
+        border: .2em solid $val;
+    }
+    .inputbdr-top-#{$key} {
+        @include inputt($val);
+        border: none;
+        border-top: .2em solid $val;
+    }
+    .inputbdr-btm-#{$key} {
+        @include inputt($val);
+        border: none;
+        border-bottom: .2em solid $val;
+    }
+    .inputbdr-lft-#{$key} {
+        @include inputt($val);
+        border: none;
+        border-left: .2em solid $val;
+    }
+    .inputbdr-rgt-#{$key} {
+        @include inputt($val);
+        border: none;
+        border-right: .2em solid $val;
+    }
+    .input-complement-#{$key} {
+        @include inputt($val);
+        color: light-comp($val);
+        &:hover {
+            color: $val;
+            background-color: light-comp($val);
+        }
+    }
+    .inputf-hover-#{$key} {
+        &:hover {
+            background-color: $val;
+        }
+    }
+}
+
+
+@each $key, $val in $colors {
+    .inputf-#{$key} {
+        @include inputfile($val);
+        border: .2em solid $val;
+    }
+    .inputf2-#{$key} {
+        @include inputfile1($val);
+    }
+    .inputf-top-#{$key} {
+        @include inputfile($val);
+        border: none;
+        border-top: .2em solid $val;
+    }
+    .inputf-btm-#{$key} {
+        @include inputfile($val);
+        border: none;
+        border-bottom: .2em solid $val;
+    }
+    .inputf-lft-#{$key} {
+        @include inputfile($val);
+        border: none;
+        border-left: .2em solid $val;
+    }
+    .inputf-rgt-#{$key} {
+        @include inputfile($val);
+        border: none;
+        border-right: .2em solid $val;
+    }
+    .inputf-hover-#{$key} {
+        @include inputt($val);
+        color: light-comp($val);
+        &:hover {
+            color: $val;
+            background-color: light-comp($val);
+        }
+    }
+}
+
+

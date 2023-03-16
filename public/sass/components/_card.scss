@@ -1,0 +1,40 @@
+@use 'sass:math';
+
+//* Generate Css component 
+.card {
+    display: block;
+    padding: $base-padding;
+    border: $base-border-width solid #ddd;
+    box-shadow: $base-box-shadow;
+    border-radius: math.div($base-border-radius, 4);
+    .card-title {
+        font-size: $font-size-lg;
+        padding-bottom: $base-padding;
+        font-weight: bold;
+
+    }
+    .card-body {
+        font-size: $base-font-size;
+        // a {
+        //     //text-decoration: underline;
+        // }
+    }
+}
+
+.card1 {
+    padding: .2em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+    row-gap: .2em;
+    .title1 {
+        width: 100%;
+    }
+    .view-box {
+        width: 100%;
+    }
+    .foot1 {
+        width: 100%;
+    }
+}

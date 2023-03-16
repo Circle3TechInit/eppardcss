@@ -1,0 +1,140 @@
+// Theme colors
+$primary: #326dee;
+$secondary: #1ac888;
+$error: #d32752;
+$info: orange;
+
+
+//* color palette
+$colors: (
+    "primary": #326dee,
+    "secondary": #1ac888,
+    "error": #d32752,
+    "info": orange,
+    "stream": #016371,
+    "sims": #003060,
+    "aqua": aqua,
+    "blue": dodgerblue,
+    "cfblue": cornflowerblue,
+    "dcyan": darkcyan,
+    "ablue": aliceblue,
+    "dsblue": deepskyblue,
+    "lsblue": lightskyblue,
+    "sblue": SkyBlue,
+    "red": #e61919,
+    "ired": indianred,
+    "tomato": tomato,
+    "fbrick": FireBrick,
+    "yellow": #e6e619,
+    "sgreen": SeaGreen,
+    "green": mediumseagreen,
+    "dsgreen": darkseagreen,
+    "amarine": aquamarine,
+    "orange": orange,
+    "brown": burlywood,
+    "sbrown": SandyBrown,
+    "teal": Teal,
+    "beige": beige,
+    "csilk": cornsilk,
+    "slblue": slateblue,
+    "violet": violet, 
+    "plum": Plum,
+    "dsgray": darkslategray,
+    "gray": gray,
+    "sgrey": SlateGrey,
+    "silver": silver,
+    "lgray": lightgray,
+    "lavender": lavender,
+    "black": black,
+    "white": #ffffff,
+    "fwhite": floralwhite,
+    "gwhite": ghostwhite,
+    "ivory": ivory,
+    "wheat": wheat,
+    "khaki": khaki,
+    "gold": goldenrod,
+    "peru": Peru,
+    "salmon": Salmon,
+    "lcoral": LightCoral,
+    "indigo": Indigo,
+    "hpink": HotPink,
+);
+
+
+// @debug map-get($colors, "green");
+// @debug map-has-key($colors , "secondary" );
+// @debug map-remove($colors, "primary" );
+// @debug map-merge($colors, ("pink": #ffc0cb));
+
+//* Base Spacing
+$base-padding: 0.5em;
+$base-margin: 0.5em;
+
+//* Base Borders
+$base-border-width: 0.1em;
+$base-border-radius: .2em;
+
+// Box Shadow
+$base-box-shadow: .1em .1em .2em rgba(0, 0, 0, 0.1);
+
+//* Fonts
+$serif: Times, "Times New Roman", Georgia, serif;
+$sansserif: Verdana, Arial, Helvetica, sans-serif;
+$monos: "Lucida Console", "Courier New", monospace;
+$cursive: "Brush Script MT", "Lucida Handwriting", cursive;
+$fantasy: "Copperplate", "Papyrus";
+$noto: Noto;
+$primaryFontStyle: 'Titillium Web', sans-serif;
+
+//* Base Font Sizes
+$base-font-size: 1.2em;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-md: $base-font-size;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 2.5;
+$font-size-xxxl: $base-font-size * 3;
+
+
+//* Measurement Units Numbers
+
+// Percentages
+$percentage: (
+    "0": 0, "1": 1%, "2": 2%, "3": 3%, "4": 4%, "5": 5%, "6": 6%, "7": 7%, "8": 8%, "9": 9%, "10": 10%,
+    "11": 11%, "12": 12%, "13": 13%, "14": 14%, "15": 15%, "16": 16%, "17": 17%, "18": 18%, "19": 19%, "20": 20%,
+    "21": 21%, "22": 22%, "23": 23%, "24": 24%, "25": 25%, "26": 26%, "27": 27%, "28": 28%, "29": 29%, "30": 30%,
+    "31": 31%, "32": 32%, "33": 33%, "34": 34%, "35": 35%, "36": 36%, "37": 37%, "38": 38%, "39": 39%, "40": 40%,
+    "41": 41%, "42": 42%, "43": 43%, "44": 44%, "45": 45%, "46": 46%, "47": 47%, "48": 48%, "49": 49%, "50": 50%,
+    "51": 51%, "52": 52%, "53": 53%, "54": 54%, "55": 55%, "56": 56%, "57": 57%, "58": 58%, "59": 59%, "60": 60%,
+    "61": 61%, "62": 62%, "63": 63%, "64": 64%, "65": 65%, "66": 66%, "67": 67%, "68": 68%, "69": 69%, "70": 70%,
+    "71": 71%, "72": 72%, "73": 73%, "74": 74%, "75": 75%, "76": 76%, "77": 77%, "78": 78%, "79": 79%, "80": 80%,
+    "81": 81%, "82": 82%, "83": 83%, "84": 84%, "85": 85%, "86": 86%, "87": 87%, "88": 88%, "89": 89%, "90": 90%,
+    "91": 91%, "92": 92%, "93": 93%, "94": 94%, "95": 95%, "96": 96%, "97": 97%, "98": 98%, "99": 99%, "100": 100%,
+);
+
+$em_unit: (
+    "0": 0, "1": 1em, "2": 2em, "3": 3em, "4": 4em, "5": 5em, "6": 6em, "7": 7em, "8": 8em, "9": 9em, "10": 10em,
+    "11": 11em, "12": 12em, "13": 13em, "14": 14em, "15": 15em, "16": 16em, "17": 17em, "18": 18em, "19": 19em, "20": 20em,
+    "21": 21em, "22": 22em, "23": 23em, "24": 24em, "25": 25em, "26": 26em, "27": 27em, "28": 28em, "29": 29em, "30": 30em,
+    "31": 31em, "32": 32em, "33": 33em, "34": 34em, "35": 35em, "36": 36em, "37": 37em, "38": 38em, "39": 39em, "40": 40em,
+    "41": 41em, "42": 42em, "43": 43em, "44": 44em, "45": 45em, "46": 46em, "47": 47em, "48": 48em, "49": 49em, "50": 50em,
+    "51": 51em, "52": 52em, "53": 53em, "54": 55em, "55": 55em, "56": 56em, "57": 57em, "58": 58em, "59": 59em, "60": 60em,
+    "61": 61em, "62": 62em, "63": 63em, "64": 64em, "65": 65em, "66": 66em, "67": 67em, "68": 68em, "69": 69em, "70": 70em,
+    "71": 71em, "72": 72em, "73": 73em, "74": 74em, "75": 75em, "76": 76em, "77": 77em, "78": 78em, "79": 79em, "80": 80em,
+    "81": 81em, "82": 82em, "83": 83em, "84": 84em, "85": 85em, "86": 86em, "87": 87em, "88": 88em, "89": 89em, "90": 90em,
+    "91": 91em, "92": 92em, "93": 93em, "94": 94em, "95": 95em, "96": 96em, "97": 97em, "98": 98em, "99": 99em, "100": 100em,
+);
+
+$number: (
+    "0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10,
+    "11": 11, "12": 12, "13": 13, "14": 14, "15": 15, "16": 16, "17": 17, "18": 18, "19": 19, "20": 20,
+    "21": 21, "22": 22, "23": 23, "24": 24, "25": 25, "26": 26, "27": 27, "28": 28, "29": 29, "30": 30,
+    "31": 31, "32": 32, "33": 33, "34": 34, "35": 35, "36": 36, "37": 37, "38": 38, "39": 39, "40": 40,
+    "41": 41, "42": 42, "43": 43, "44": 44, "45": 45, "46": 46, "47": 47, "48": 48, "49": 49, "50": 50,
+    "51": 51, "52": 52, "53": 53, "54": 54, "55": 55, "56": 56, "57": 57, "58": 58, "59": 59, "60": 60,
+    "61": 61, "62": 62, "63": 63, "64": 64, "65": 65, "66": 66, "67": 67, "68": 68, "69": 69, "70": 70,
+    "71": 71, "72": 72, "73": 73, "74": 74, "75": 75, "76": 76, "77": 77, "78": 78, "79": 79, "80": 80,
+    "81": 81, "82": 82, "83": 83, "84": 84, "85": 85, "86": 86, "87": 87, "88": 88, "89": 89, "90": 90,
+    "91": 91, "92": 92, "93": 93, "94": 94, "95": 95, "96": 96, "97": 97, "98": 98, "99": 99, "100": 100,
+);
+

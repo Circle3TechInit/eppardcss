@@ -1,0 +1,337 @@
+//* Generate Button Classes
+@mixin btn($bg-color: #e2e2e2) {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: $base-padding $base-padding * 2;
+    border-radius: $base-border-radius;
+    background-color: $bg-color;
+}
+
+@mixin btn_rnd($bg-color: #e2e2e2 ) {
+    padding: 1em .2em;
+    //color: $text-color;
+    //width: 40%;
+    border-radius: 100px;
+    border: none;
+    //border: .2em solid rgba(0%,0%,0%,0.2);
+    //border-width: .1em .1em .1em .1em;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.6),0px 0px 5px rgba(255,255,255,1),0px 1px 0px 3px rgba(0,0,0,0.2),inset 0px 1px 0px rgba(255,255,255,0.178);
+    display: inline-block;
+}
+
+@mixin btn_rect($bg-color: #e2e2e2 ) {
+    padding: 1em .4em;
+    //color: $text-color;
+    //width: 40%;
+    border-radius: .2em;
+    border: none;
+    //border: .2em solid rgba(0%,0%,0%,0.2);
+    //border-width: .1em .1em .1em .1em;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.6),0px 0px 5px rgba(255,255,255,1),0px 1px 0px 3px rgba(0,0,0,0.2),inset 0px 1px 0px rgba(255,255,255,0.178);
+    display: inline-block;
+}
+
+@mixin btn_pill($bgg-color: #e2e2e2 ) {
+    padding: .57em .7em;
+    color: $bgg-color;
+    width: max-content;
+    height: max-content;
+    border-radius: 50%;
+    border: .2em solid rgba(0%,0%,0%,0.2);
+    //border-width: .1em .1em .1em .1em;
+    //padding: 4px 22px 5px 22px;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.6),0px 0px 5px rgba(255,255,255,1),0px 1px 0px 3px rgba(0,0,0,0.2),inset 0px 1px 0px rgba(255, 255, 255, 0.178);
+    i {
+        padding-top: 2.8px;
+    }
+}
+
+@mixin btn_pill_rnd($bgg-color: #e2e2e2 ) {
+    border-radius: .2em;
+    border: .2em solid rgba(0%,0%,0%,0.2);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.6),0px 0px 5px rgba(255,255,255,1),0px 1px 0px 3px rgba(0,0,0,0.2),inset 0px 1px 0px rgba(255, 255, 255, 0.178);
+    width: max-content;
+    height: max-content;
+    i {
+        padding-top: .1em;
+    }
+}
+
+@mixin btn_animated($bgg-color: #e2e2e2 ) {
+    border-radius: 4px;
+    background-color: $bgg-color;
+    border: none;
+    text-align: center;
+    //font-size: 28px;
+    padding: .8em .4em;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    
+    &:hover {
+        span {
+            padding-right: 25px;
+        }
+        span:after {
+            opacity: 1;
+            right: 0;
+          }
+    }
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        &::after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+    }
+}
+
+@mixin btn_animated1($bgg-color: #e2e2e2 ) {
+    position: relative;
+    background-color: $bgg-color;
+    border: none;
+    padding: .8em .2em;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    &::after {
+        content: "";
+        // background: #90EE90;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px!important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+    }
+    &:active::after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+    }
+}
+
+@mixin btn_notifi($bgg-color: #e2e2e2 ) {
+    background-color: $bgg-color;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    &:hover {
+        background: rgb(255, 255, 255);
+    }
+    .badge {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        padding: 5px 10px;
+        border-radius: 50%;
+    }
+}
+
+@mixin btn_social($bgg-color: #e2e2e2 ) {
+    padding: .6em .4em;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+@mixin btn_icon($bgg-color: #e2e2e2 ) {
+    background-color: $bgg-color; /* Blue background */
+    border: none; /* Remove borders */
+    padding: .6em .8em; /* Some padding */
+    cursor: pointer; /* Mouse pointer on hover */
+
+}
+
+@mixin btn_warning($bgg-color: black ) {
+    border: none;
+    background-color: inherit;
+    padding: .6em .8em; /* Some padding */
+    cursor: pointer;
+    display: inline-block;
+    color: $bgg-color;
+}
+
+.btn {
+    @include btn;
+}
+
+.btn-rnd {
+    @include btn_rnd;
+}
+
+.btn-rect {
+    @include btn_rect;
+}
+
+.btn-pill {
+    @include btn_pill(black);
+}
+
+.btn-pills {
+    @include btn_pill_rnd(black);
+    color: indianred;
+    background-color: white;
+}
+
+.btn-anim {
+    @include btn_animated;
+    color: black;
+}
+
+.btn-anim1 {
+    @include btn_animated1;
+    color: #000000;
+    &::after {
+        background: #111111;
+    }
+}
+
+.btn-anim2 {
+    @include btn_animated1(black);
+    color: #ffffff;
+    &::after {
+        background: #fffdfd;
+    }
+}
+
+.btn-notif {
+    @include btn_notifi;
+    color: #000000;
+    .badge {
+        background: rgb(0, 0, 0);
+        color: white;
+    }
+}
+
+.btn-social {
+    @include btn_social;
+}
+
+.btn-icon {
+    @include btn_icon(white);
+    color:  black; /* White text */
+}
+
+.btn-warn {
+    @include btn_warning;
+}
+
+@each $key, $val in $colors {
+    .btn-#{$key} {
+        @include btn($val);
+        &:hover {
+            background-color: lighten($val, 5)
+        }
+    }
+    .btn-outlined-#{$key} {
+        @include btn(#fff);
+        border: $base-border-width solid $val;
+        color: $val;
+        &:hover {
+            background-color: $val;
+        }
+    }
+    .btn-complement-#{$key} {
+        @include btn($val);
+        //color: light-comp($val);
+        &:hover {
+            color: $val;
+            background-color: light-comp($val);
+        }
+    }
+    .btn-rnd-#{$key} {
+        @include btn_rnd($val);
+        background: linear-gradient(180deg,$val 100%,#f9f9f9 100%);
+        &:hover {
+            background: linear-gradient(180deg,#f9f9f9 5%,$val 80%);
+        }
+    }
+    .btn-rect-#{$key} {
+        @include btn_rect($val);
+        background: linear-gradient(180deg,$val 100%,#f9f9f9 100%);
+        &:hover {
+            background: linear-gradient(180deg,#f9f9f9 5%,$val 80%);
+        }
+    }
+    .btn-pill-#{$key} {
+        @include btn_pill($val);
+        background-color: $val;
+    }
+
+    .btn-pills-#{$key} {
+        @include btn_pill_rnd($val);
+        background-color: $val;
+    }
+
+    .btn-anim-#{$key} {
+        @include btn_animated($val);
+        background-color: $val;
+        color: white;
+    }
+
+    .btn-anim1-#{$key} {
+        @include btn_animated1;
+        color: $val;
+        &::after {
+            background: $val;
+        }
+    }
+
+    .btn-anim2-#{$key} {
+        @include btn_animated1($val);
+        color: white;
+        &::after {
+            background: white;
+        }
+    }
+
+    .btn-notif-#{$key} {
+        @include btn_notifi;
+        color: $val;
+        .badge {
+            background: $val;
+            color: white;
+        }
+    }
+
+    .btn-notif1-#{$key} {
+        @include btn_notifi($val);
+        color: white;
+        .badge {
+            background: white;
+            color: $val;
+        }
+    }
+
+    .btn-icon-#{$key} {
+        @include btn_icon($val);
+        color:  white; /* White text */
+    }
+
+    .btn-warn-#{$key} {
+        @include btn_warning($val);
+    }
+}
